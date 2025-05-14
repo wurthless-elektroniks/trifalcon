@@ -1,0 +1,7 @@
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","DNP","LCSC","Sim.Device","Sim.Pins"
+"1","1","D1","1N4448X-TP","Device:D","Diode_SMD:D_SOD-523","~","","C780067","D","1=K 2=A"
+"2","1","R1","22k","Device:R","Resistor_SMD:R_0603_1608Metric","~","","C114065","",""
+"3","1","TP1","SMC_PLL","Connector:TestPoint","TestPoint:TestPoint_Plated_Hole_D2.0mm","~","","","",""
+"4","1","TP2","SMC_POST","Connector:TestPoint","TestPoint:TestPoint_Plated_Hole_D2.0mm","~","","","",""
+"5","1","TP3","TO PLL","Connector:TestPoint","TestPoint:TestPoint_Pad_D2.0mm","~","","","",""
+"6","1","TP4","TO POST","Connector:TestPoint","TestPoint:TestPoint_Pad_D2.0mm","~","","","",""
