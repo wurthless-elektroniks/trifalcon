@@ -25,7 +25,25 @@ That said, here are recommendations from a someone who's modded a bunch of 360s.
   headaches, including slow boot times or the system randomly powering off immediately after
   turning it on. Your mileage may vary.
 - **Zephyr**: Not really supported even though it has a HANA chip. EXT_CLK is a better bet. 
-- **Xenon**: Not supported at all as it doesn't have HANA. Again, use EXT_CLK for these.
+- **Xenon**: Not supported at all. Xenon boards do not use a HANA, and even though the clock generator is
+  accessible over I2C, it is more or less fixed at 100 MHz so I2C slowdown isn't possible. Use EXT_CLK.
+
+Note that it may still take your console up to 20 attempts (i.e., over 20 seconds) to boot successfully.
+Some are more cooperative than others. If you can't get decent boot times after a while, try RGH1.2.
+
+## Why is my system powering off?
+
+If you're wondering why your system is powering off randomly at startup, here's why.
+
+The RGH3 code is programmed to check the POST bit status as fast as possible without regards to the
+SMC's watchdog feature. If the code gets stuck waiting for a POST bit that never arrives, the SMC will
+watchdog and reboot the entire system into standby mode.
+
+Possible causes of this issue are:
+- POST is not connected to the right test point
+- POST wire is picking up noise, causing the SMC to read the wrong values
+- PLL wire is picking up noise, causing unwanted slowdowns or crashes on the CPU
+- Jasper-related headaches which I have yet to diagnose and solve
 
 ## Installation
 
